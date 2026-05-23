@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  /* Glaucous */
+  --color-glaucous-50: #edf0f7;
+  --color-glaucous-100: #dbe2f0;
+  --color-glaucous-200: #b8c5e0;
+  --color-glaucous-300: #94a7d1;
+  --color-glaucous-400: #708ac2;
+  --color-glaucous-500: #4d6db3;
+  --color-glaucous-600: #3d578f;
+  --color-glaucous-700: #2e416b;
+  --color-glaucous-800: #1f2c47;
+  --color-glaucous-900: #0f1624;
+  --color-glaucous-950: #0b0f19;
+
+  /* Charcoal Blue */
+  --color-charcoal-blue-50: #f0f1f4;
+  --color-charcoal-blue-100: #e1e3ea;
+  --color-charcoal-blue-200: #c3c8d5;
+  --color-charcoal-blue-300: #a5acc0;
+  --color-charcoal-blue-400: #8891aa;
+  --color-charcoal-blue-500: #6a7595;
+  --color-charcoal-blue-600: #555e77;
+  --color-charcoal-blue-700: #3f465a;
+  --color-charcoal-blue-800: #2a2f3c;
+  --color-charcoal-blue-900: #15171e;
+  --color-charcoal-blue-950: #0f1015;
+
+  /* Soft Apricot */
+  --color-soft-apricot-50: #fbf3e9;
+  --color-soft-apricot-100: #f8e6d3;
+  --color-soft-apricot-200: #f1cda7;
+  --color-soft-apricot-300: #eab47b;
+  --color-soft-apricot-400: #e29b50;
+  --color-soft-apricot-500: #db8324;
+  --color-soft-apricot-600: #af681d;
+  --color-soft-apricot-700: #844e15;
+  --color-soft-apricot-800: #58340e;
+  --color-soft-apricot-900: #2c1a07;
+  --color-soft-apricot-950: #1f1205;
+
+  /* Olive Wood */
+  --color-olive-wood-50: #f6f2ef;
+  --color-olive-wood-100: #ece5df;
+  --color-olive-wood-200: #dacabe;
+  --color-olive-wood-300: #c7b09e;
+  --color-olive-wood-400: #b5957d;
+  --color-olive-wood-500: #a27b5d;
+  --color-olive-wood-600: #82624a;
+  --color-olive-wood-700: #614a38;
+  --color-olive-wood-800: #413125;
+  --color-olive-wood-900: #201913;
+  --color-olive-wood-950: #17110d;
+
+  /* Taupe */
+  --color-taupe-50: #f3f2f1;
+  --color-taupe-100: #e8e5e3;
+  --color-taupe-200: #d1cbc7;
+  --color-taupe-300: #b9b1ac;
+  --color-taupe-400: #a29790;
+  --color-taupe-500: #8b7e74;
+  --color-taupe-600: #6f645d;
+  --color-taupe-700: #534b46;
+  --color-taupe-800: #38322e;
+  --color-taupe-900: #1c1917;
+  --color-taupe-950: #131210;
+}
