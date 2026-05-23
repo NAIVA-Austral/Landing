@@ -38,3 +38,5 @@ Thumbs.db
 
 # Docs internas (no se publican)
 /docs
+.vercel
+.env*
