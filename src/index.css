@@ -65,4 +65,13 @@
   --color-taupe-800: #38322e;
   --color-taupe-900: #1c1917;
   --color-taupe-950: #131210;
+
+  /* Base */
+  --color-ink: #1a1108;
+  --color-bg:  #f8f5f1;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }

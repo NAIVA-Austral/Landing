@@ -40,3 +40,6 @@ Thumbs.db
 /docs
 .vercel
 .env*
+
+# Brainstorming visual companion
+.superpowers/
