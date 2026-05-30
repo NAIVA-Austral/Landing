@@ -22,7 +22,7 @@ const PILARES = [
 export default function PilaresSection() {
   return (
     <section className="bg-bg px-6 md:px-16 py-[120px]">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 pb-8 border-b border-olive-wood-200">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 md:mb-16 pb-8 border-b border-olive-wood-200">
         <div>
           <span className="block text-[11px] tracking-[3px] uppercase text-olive-wood-300 mb-4">
             03 — Cultura fundacional
@@ -31,7 +31,7 @@ export default function PilaresSection() {
             Tres pilares.<br />Una dirección.
           </h2>
         </div>
-        <p className="text-[14px] text-olive-wood-500 max-w-[280px] leading-[1.6]">
+        <p className="text-[14px] text-olive-wood-500 max-w-full md:max-w-[280px] leading-[1.6] mt-4 md:mt-0">
           La innovación en el agro solo es posible cuando hay propósito común, confianza y cooperación.
         </p>
       </div>
