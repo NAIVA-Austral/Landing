@@ -29,12 +29,17 @@ describe('SumateForm', () => {
   })
 
   it('muestra el mensaje de éxito al submitear', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({}))
+
     render(<SumateForm />)
     await userEvent.type(screen.getByLabelText('Tu nombre'), 'Ana')
     await userEvent.type(screen.getByLabelText('Email'), 'ana@test.com')
     await userEvent.selectOptions(screen.getByRole('combobox'), 'Inversor')
     await userEvent.click(screen.getByRole('button', { name: /Quiero sumarme/i }))
-    expect(screen.getByText(/Pronto vas a tener noticias nuestras/i)).toBeInTheDocument()
+
+    expect(await screen.findByText(/Pronto vas a tener noticias nuestras/i)).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: /Quiero sumarme/i })).not.toBeInTheDocument()
+
+    vi.unstubAllGlobals()
   })
 })

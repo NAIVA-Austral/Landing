@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+const SHEETS_URL  = import.meta.env.VITE_SHEETS_URL
+const NAIVA_TOKEN = import.meta.env.VITE_NAIVA_TOKEN
+
 const ROLES = [
   'Desarrollador / Tech',
   'Startup AgTech',
@@ -17,10 +20,35 @@ export default function SumateForm() {
   const [rol, setRol] = useState('')
   const [idea, setIdea] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    setSubmitted(true)
+    const fd = new FormData(e.target)
+    const payload = {
+      nombre:  fd.get('nombre'),
+      email:   fd.get('email'),
+      rol:     fd.get('rol'),
+      rolOtro: fd.get('rol-otro') || '',
+      idea:    fd.get('idea')    || '',
+      _token:  NAIVA_TOKEN,
+      _hp:     fd.get('website') || '',
+    }
+    setLoading(true)
+    setError(false)
+    try {
+      await fetch(SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(payload),
+      })
+      setSubmitted(true)
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (submitted) {
@@ -91,9 +119,25 @@ export default function SumateForm() {
         </p>
       </div>
 
-      <button type="submit"
-        className="w-full mt-2 bg-ink text-bg py-[15px] rounded-full text-[15px] font-bold tracking-[0.3px] cursor-pointer border-0 font-sans">
-        Quiero sumarme →
+      {/* Honeypot — invisible para humanos, los bots lo llenan */}
+      <input
+        name="website"
+        type="text"
+        tabIndex={-1}
+        aria-hidden="true"
+        autoComplete="off"
+        style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
+      />
+
+      {error && (
+        <p className="text-[12px] text-red-500 mb-3">
+          Hubo un problema al enviar. Revisá tu conexión e intentá de nuevo.
+        </p>
+      )}
+
+      <button type="submit" disabled={loading}
+        className="w-full mt-2 bg-ink text-bg py-[15px] rounded-full text-[15px] font-bold tracking-[0.3px] cursor-pointer border-0 font-sans disabled:opacity-60 disabled:cursor-not-allowed">
+        {loading ? 'Enviando...' : 'Quiero sumarme →'}
       </button>
 
       <p className="text-[11px] text-taupe-400 text-center mt-3.5">
