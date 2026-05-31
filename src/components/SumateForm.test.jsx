@@ -30,6 +30,12 @@ describe('SumateForm', () => {
 
   it('muestra el mensaje de éxito al submitear', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({}))
+    vi.stubGlobal('crypto', {
+      subtle: {
+        importKey: vi.fn().mockResolvedValue('mock-key'),
+        sign: vi.fn().mockResolvedValue(new Uint8Array([1, 2, 3]).buffer),
+      },
+    })
 
     render(<SumateForm />)
     await userEvent.type(screen.getByLabelText('Tu nombre'), 'Ana')

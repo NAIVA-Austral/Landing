@@ -1,7 +1,38 @@
 import { useState } from 'react'
 
-const SHEETS_URL  = import.meta.env.VITE_SHEETS_URL
-const NAIVA_TOKEN = import.meta.env.VITE_NAIVA_TOKEN
+const SHEETS_URL = import.meta.env.VITE_SHEETS_URL
+
+async function getClientIP() {
+  try {
+    const res = await fetch('https://api.ipify.org?format=json')
+    const data = await res.json()
+    return data.ip || ''
+  } catch {
+    return ''
+  }
+}
+
+function getClientContext() {
+  return {
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+    locale:   navigator.language || '',
+  }
+}
+
+async function signPayload(timestamp, email) {
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(import.meta.env.VITE_HMAC_SECRET),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign']
+  )
+  const message = `${timestamp}:${email}`
+  const sigBuffer = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(message))
+  return Array.from(new Uint8Array(sigBuffer))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('')
+}
 
 const ROLES = [
   'Desarrollador / Tech',
@@ -25,15 +56,24 @@ export default function SumateForm() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    const fd = new FormData(e.target)
+    const fd      = new FormData(e.target)
+    const email   = fd.get('email')
+    const ts      = Date.now()
+    const [sig, ip] = await Promise.all([signPayload(ts, email), getClientIP()])
+    const context   = getClientContext()
+
     const payload = {
-      nombre:  fd.get('nombre'),
-      email:   fd.get('email'),
-      rol:     fd.get('rol'),
-      rolOtro: fd.get('rol-otro') || '',
-      idea:    fd.get('idea')    || '',
-      _token:  NAIVA_TOKEN,
-      _hp:     fd.get('website') || '',
+      nombre:   fd.get('nombre'),
+      email,
+      rol:      fd.get('rol'),
+      rolOtro:  fd.get('rol-otro') || '',
+      idea:     fd.get('idea')    || '',
+      timezone: context.timezone,
+      locale:   context.locale,
+      _ts:      ts,
+      _sig:     sig,
+      _ip:      ip,
+      _hp:      fd.get('website') || '',
     }
     setLoading(true)
     setError(false)
