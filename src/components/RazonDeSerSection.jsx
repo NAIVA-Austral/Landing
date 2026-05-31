@@ -10,7 +10,7 @@ const ACTORES = [
 export default function RazonDeSerSection() {
   return (
     <section id="razon" className="bg-white px-6 md:px-16 py-[120px] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
-      <div className="md:sticky md:top-[100px]">
+      <div>
         <span className="block text-[11px] tracking-[3px] uppercase text-olive-wood-300 mb-4">
           02 — Razón de ser
         </span>

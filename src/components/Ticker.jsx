@@ -13,10 +13,10 @@ const KEYWORDS = [
 
 export default function Ticker() {
   return (
-    <div className="border-t border-b border-olive-wood-200 py-3.5 overflow-hidden bg-bg">
-      <div className="flex whitespace-nowrap" style={{ animation: 'ticker-scroll 28s linear infinite' }}>
-        {[...KEYWORDS, ...KEYWORDS].map((kw, i) => (
-          <span key={i} className="inline-flex items-center gap-4 text-[12px] font-medium text-olive-wood-500 px-6">
+    <div className="border-t border-b border-olive-wood-200 py-3.5 bg-bg">
+      <div className="flex flex-wrap justify-center gap-y-2">
+        {KEYWORDS.map((kw) => (
+          <span key={kw} className="inline-flex items-center gap-4 text-[12px] font-medium text-olive-wood-500 px-6">
             <span className="w-1 h-1 rounded-full bg-soft-apricot-500 flex-shrink-0" />
             {kw}
           </span>
