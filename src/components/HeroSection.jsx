@@ -1,12 +1,20 @@
 export default function HeroSection() {
   return (
     <section
-      className="min-h-screen bg-bg flex items-center justify-center px-6 md:px-16 pt-[120px] md:pt-[140px] pb-16 md:pb-[100px]"
+      className="relative overflow-hidden min-h-screen bg-bg flex items-center justify-center px-6 md:px-16 pt-[120px] md:pt-[140px] pb-16 md:pb-[100px]"
       style={{
         background: 'radial-gradient(ellipse 80% 55% at 85% 25%, rgba(240,120,32,0.12) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 15% 80%, rgba(139,143,196,0.12) 0%, transparent 55%), var(--color-bg)',
       }}
     >
-      <div className="max-w-[680px] text-center flex flex-col items-center gap-5">
+      {/* Estrella federal — patrón decorativo con bleed completo en el borde derecho */}
+      <img
+        src="/estrella_federal.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none select-none absolute right-[-4%] md:right-0 inset-y-0 h-full w-auto opacity-50 md:opacity-80"
+      />
+
+      <div className="relative z-10 max-w-[680px] text-center flex flex-col items-center gap-5">
 
         <div className="bg-soft-apricot-100 rounded-full px-4 py-1.5 text-[11px] font-semibold text-soft-apricot-600 tracking-[1.5px] uppercase">
           AgTech · LATAM
