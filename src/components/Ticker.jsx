@@ -7,7 +7,6 @@ const KEYWORDS = [
   'Coopetición',
   'Desarrollo sostenible',
   'Ecosistema vivo',
-  'Open to devs',
   'Impacto real en el agro',
 ]
 

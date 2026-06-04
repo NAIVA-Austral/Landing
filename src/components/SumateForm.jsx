@@ -35,12 +35,11 @@ async function signPayload(timestamp, email) {
 }
 
 const ROLES = [
-  'Desarrollador / Tech',
-  'Startup AgTech',
+  'Startup',
   'Productor agropecuario',
   'Academia / Investigación',
   'Inversor',
-  'Empresa tecnológica',
+  'Empresa',
   'Otro',
 ]
 
@@ -65,6 +64,7 @@ export default function SumateForm() {
     const payload = {
       nombre:   fd.get('nombre'),
       email,
+      empresa:  fd.get('empresa') || '',
       rol:      fd.get('rol'),
       rolOtro:  fd.get('rol-otro') || '',
       idea:     fd.get('idea')    || '',
@@ -119,6 +119,15 @@ export default function SumateForm() {
         <label htmlFor="email" className={labelClass}>Email</label>
         <input id="email" name="email" type="email" required
           placeholder="martin@ejemplo.com" className={inputClass} />
+      </div>
+
+      <div className="mb-[18px]">
+        <label htmlFor="empresa" className={labelClass}>
+          Empresa / Organización{' '}
+          <span className="font-normal text-taupe-400">— opcional</span>
+        </label>
+        <input id="empresa" name="empresa" type="text"
+          placeholder="Ej: AgroTech S.A." className={inputClass} />
       </div>
 
       <div className="mb-[18px]">

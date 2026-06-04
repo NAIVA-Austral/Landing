@@ -1,10 +1,9 @@
 const ACTORES = [
   { num: '01', label: 'Productores agropecuarios', desc: 'Traccionan la demanda real' },
-  { num: '02', label: 'Startups AgTech',           desc: 'Propuestas de valor con impacto' },
-  { num: '03', label: 'Desarrolladores',            desc: 'Construyen desde adentro' },
-  { num: '04', label: 'Academia & Ciencia',         desc: 'Conocimiento aplicado al campo' },
-  { num: '05', label: 'Inversores',                 desc: 'Capital para proyectos de impacto' },
-  { num: '06', label: 'Empresas tecnológicas',      desc: 'Escalan soluciones al sector' },
+  { num: '02', label: 'Startups',                  desc: 'Propuestas de valor con impacto' },
+  { num: '03', label: 'Academia & Ciencia',         desc: 'Conocimiento aplicado al campo' },
+  { num: '04', label: 'Inversores',                 desc: 'Capital para proyectos de impacto' },
+  { num: '05', label: 'Empresas',                   desc: 'Escalan soluciones al sector' },
 ]
 
 export default function RazonDeSerSection() {

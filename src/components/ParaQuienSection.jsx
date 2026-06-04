@@ -1,25 +1,18 @@
 const CARDS = [
   {
-    id: 'devs',
-    label: 'Para desarrolladores',
-    title: 'Tu código, impacto real en el campo.',
-    body: 'Construí herramientas que resuelven problemas reales del sector agropecuario. Acá el código tiene consecuencias tangibles.',
-    cta: 'Sumate como dev →',
-    featured: true,
-  },
-  {
-    id: 'startups',
-    label: 'Startups AgTech',
-    title: 'Validá con productores reales.',
-    body: 'Accedé a una red de aliados, inversores y conocimiento sectorial.',
-    cta: 'Sumá tu startup →',
-  },
-  {
     id: 'productores',
     label: 'Productores',
     title: 'Tu campo es el laboratorio.',
     body: 'Tu experiencia tracciona la demanda real. Conectá con tecnología que entiende el campo.',
     cta: 'Participar →',
+    featured: true,
+  },
+  {
+    id: 'startups',
+    label: 'Startups',
+    title: 'Validá con productores reales.',
+    body: 'Accedé a una red de aliados, inversores y conocimiento sectorial.',
+    cta: 'Sumá tu startup →',
   },
   {
     id: 'academia',

@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  /* Glaucous */
-  --color-glaucous-50: #edf0f7;
-  --color-glaucous-100: #dbe2f0;
-  --color-glaucous-200: #b8c5e0;
-  --color-glaucous-300: #94a7d1;
-  --color-glaucous-400: #708ac2;
-  --color-glaucous-500: #4d6db3;
-  --color-glaucous-600: #3d578f;
-  --color-glaucous-700: #2e416b;
-  --color-glaucous-800: #1f2c47;
-  --color-glaucous-900: #0f1624;
-  --color-glaucous-950: #0b0f19;
+  /* Glaucous → Violeta/Lila (brand color Canva) */
+  --color-glaucous-50:  #f0f0f8;
+  --color-glaucous-100: #dcddf2;
+  --color-glaucous-200: #bcbee8;
+  --color-glaucous-300: #9ca0dc;
+  --color-glaucous-400: #9294cc;
+  --color-glaucous-500: #8b8fc4;
+  --color-glaucous-600: #6e72aa;
+  --color-glaucous-700: #54588a;
+  --color-glaucous-800: #3a3d62;
+  --color-glaucous-900: #202238;
+  --color-glaucous-950: #131424;
 
   /* Charcoal Blue */
   --color-charcoal-blue-50: #f0f1f4;
@@ -27,18 +27,18 @@
   --color-charcoal-blue-900: #15171e;
   --color-charcoal-blue-950: #0f1015;
 
-  /* Soft Apricot */
-  --color-soft-apricot-50: #fbf3e9;
-  --color-soft-apricot-100: #f8e6d3;
-  --color-soft-apricot-200: #f1cda7;
-  --color-soft-apricot-300: #eab47b;
-  --color-soft-apricot-400: #e29b50;
-  --color-soft-apricot-500: #db8324;
-  --color-soft-apricot-600: #af681d;
-  --color-soft-apricot-700: #844e15;
-  --color-soft-apricot-800: #58340e;
-  --color-soft-apricot-900: #2c1a07;
-  --color-soft-apricot-950: #1f1205;
+  /* Soft Apricot → Naranja NAIVA (brand color Canva) */
+  --color-soft-apricot-50:  #fef4eb;
+  --color-soft-apricot-100: #fde3c6;
+  --color-soft-apricot-200: #fac28c;
+  --color-soft-apricot-300: #f79f55;
+  --color-soft-apricot-400: #f38b35;
+  --color-soft-apricot-500: #f07820;
+  --color-soft-apricot-600: #c46019;
+  --color-soft-apricot-700: #964812;
+  --color-soft-apricot-800: #68320b;
+  --color-soft-apricot-900: #3a1b06;
+  --color-soft-apricot-950: #261204;
 
   /* Olive Wood */
   --color-olive-wood-50: #f6f2ef;
@@ -68,7 +68,7 @@
 
   /* Base */
   --color-ink: #1a1108;
-  --color-bg:  #f8f5f1;
+  --color-bg:  #fae6cc;
 }
 
 @keyframes ticker-scroll {
