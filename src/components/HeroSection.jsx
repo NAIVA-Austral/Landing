@@ -37,8 +37,8 @@ export default function HeroSection() {
             Sumate al HUB
           </a>
           <a href="#razon"
-            className="text-glaucous-600 text-[14px] no-underline after:content-['→'] after:ml-1.5">
-            Conocé el proyecto
+            className="text-glaucous-600 text-[15px] no-underline after:content-['→'] after:ml-1.5">
+            Conocé Naiva
           </a>
         </div>
 
